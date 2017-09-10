@@ -58,7 +58,7 @@ double bstheta(double s,
     double pd1 = normpdf(d1);
     double nd1 = normcdf(type*d1);
     double nd2 = normcdf(type*d2);
-    double theta = type*(exp(-q*t)*s*pd1*sigma*0.5/sqrt(t) - r*k*exp(-r*t)*nd2 + q*s*exp(-q*t)*nd1);
+    double theta = -exp(-q*t)*s*pd1*sigma*0.5/sqrt(t) + type * (-r*k*exp(-r*t)*nd2 + q*s*exp(-q*t)*nd1);
     return theta;
 }
 
