@@ -1,7 +1,9 @@
 #ifndef analytic_blackscholes_hpp
 #define analytic_blackscholes_hpp
 
-enum OptionType { Call = 1, Put = -1 };
+#define MAX(x, y)   (((x) > (y)) ? (x) : (y))
+
+enum OptionType { Call = 1, Put = -1 };     // analytic price를 구하게 하는 곳에 이 변수가 들어가는 건 불편.
 
 double bsprice(double s,
                double k,
