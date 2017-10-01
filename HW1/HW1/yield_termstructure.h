@@ -17,4 +17,5 @@ private:
     std::vector<Date> dates_;
     std::vector<double> rates_;
 };
+
 #endif /* yield_termstructure_h */
