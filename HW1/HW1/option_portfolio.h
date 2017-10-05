@@ -12,11 +12,8 @@ public:
                     std::vector<int> quantity) : instrument_(instrument),position_(position), quantity_(quantity) { }
     void setProcess(GBMProcess p);
     void setEvalDate(Date d);
-    //double calc(double(Option::*func)());     함수 포인터를 이용, 포트폴리오의 가격, greek 계산 일반화 가능할 것임
-    double price();
-    double delta();
-    double gamma();
-    double vega();
+    // price, greek function 주소값을 인자로 받아 포트폴리오의 value, greek을 계산하는 함수
+    double calc(double (Option::*func)());      
 private:
     std::vector<Option*> instrument_;
     std::vector<Position> position_;
