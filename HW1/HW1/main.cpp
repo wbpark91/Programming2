@@ -7,7 +7,6 @@
 #include "option_portfolio.h"
 
 int main() {
-    
     std::vector<Date> date;
     for (int i = 9; i <= 12; ++i) {
         date.push_back(Date(2017, i, 30));
@@ -47,27 +46,18 @@ int main() {
     port.setProcess(mktVar);
     std::cout << "Underlying Price: " << mktVar.getSpot() << std::endl;
     std::cout << "===================" << std::endl;
-    std::cout << "Price: " << port.calc(&Option::price) << std::endl;
-    std::cout << "Delta: " << port.calc(&Option::delta) << std::endl;
-    std::cout << "Gamma: " << port.calc(&Option::gamma) << std::endl;
-    std::cout << "Vega: " << port.calc(&Option::vega) << std::endl;
+    port.printInfo();
     std::cout << std::endl;
     
     port.setProcess(mktVar1);
     std::cout << "Underlying Price: " << mktVar1.getSpot() << std::endl;
     std::cout << "===================" << std::endl;
-    std::cout << "Price: " << port.calc(&Option::price) << std::endl;
-    std::cout << "Delta: " << port.calc(&Option::delta) << std::endl;
-    std::cout << "Gamma: " << port.calc(&Option::gamma) << std::endl;
-    std::cout << "Vega: " << port.calc(&Option::vega) << std::endl;
+    port.printInfo();
     std::cout << std::endl;
     
     port.setProcess(mktVar2);
     std::cout << "Underlying Price: " << mktVar2.getSpot() << std::endl;
     std::cout << "===================" << std::endl;
-    std::cout << "Price: " << port.calc(&Option::price) << std::endl;
-    std::cout << "Delta: " << port.calc(&Option::delta) << std::endl;
-    std::cout << "Gamma: " << port.calc(&Option::gamma) << std::endl;
-    std::cout << "Vega: " << port.calc(&Option::vega) << std::endl;
+    port.printInfo();
     return 0;
 }

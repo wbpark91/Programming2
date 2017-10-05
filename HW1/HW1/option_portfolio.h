@@ -13,7 +13,8 @@ public:
     void setProcess(GBMProcess p);
     void setEvalDate(Date d);
     // price, greek function 주소값을 인자로 받아 포트폴리오의 value, greek을 계산하는 함수
-    double calc(double (Option::*func)());      
+    double calc(double (Option::*func)());
+    void printInfo();
 private:
     std::vector<Option*> instrument_;
     std::vector<Position> position_;
