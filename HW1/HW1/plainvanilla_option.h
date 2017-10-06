@@ -9,6 +9,8 @@ public:
     PlainVanillaOption(Date expiration, double strike,
                        OptionType type) : Option(expiration, strike, type) {}
     virtual double price();
+    double delta();
+    double gamma();
     double vega();
     double impliedVol(double mktPrice, double init = 0.1,
                       double tol = 1e-6);

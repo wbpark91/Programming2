@@ -10,6 +10,16 @@ double PlainVanillaOption::price() {
     return price;
 }
 
+double PlainVanillaOption::delta() {
+    double d1 = getd1();
+    return type_ * exp(-q_*t_) * normcdf(type_*d1);
+}
+
+double PlainVanillaOption::gamma() {
+    double d1 = getd1();
+    return exp(-q_*t_) * normpdf(d1) / (s_*sigma_*sqrt(t_));
+}
+
 double PlainVanillaOption::vega() {
     double d1 = getd1();
     double npd1 = normpdf(d1);
@@ -26,6 +36,7 @@ double PlainVanillaOption::impliedVol(double mktPrice, double init, double tol){
         e = abs(diff);
         x = x - diff / vega();
     }
+    setVolatility(p_.getVol());
     return x;
 }
 
