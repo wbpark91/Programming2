@@ -1,5 +1,13 @@
 #include "option_portfolio.h"
 #include <iostream>
+#include <string>
+
+OptionPortfolio::~OptionPortfolio() {
+    for (int i = 0; i < instrument_.size(); ++i) {
+        delete instrument_[i];
+    }
+}
+
 double OptionPortfolio::calc(double (Option::*func)()) {
     double value = 0;
     for (int i = 0; i < instrument_.size(); ++i) {
@@ -22,7 +30,7 @@ void OptionPortfolio::setEvalDate(Date d) {
 
 void OptionPortfolio::printInfo() {
     std::cout << "Information of Individual Options" << std::endl;
-    std::cout << "=================================" << std::endl;
+    std::cout << std::string(35, '-') << std::endl;
     std::cout << "No." << "\t" << "Price" << "\t\t" << "Delta";
     std::cout << "\t\t" << "Gamma" << "\t\t" << "Vega" << std::endl;
     for (int i = 0; i < instrument_.size(); ++i) {
@@ -33,12 +41,12 @@ void OptionPortfolio::printInfo() {
         printf("%.5f \t", instrument_[i] -> vega());
         std::cout << std::endl;
     }
-    std::cout << "==========================" << std::endl;
+    std::cout << std::string(35, '-') << std::endl;
     std::cout << "Portfolio Value Evaluation" << std::endl;
-    std::cout << "==========================" << std::endl;
+    std::cout << std::string(35, '-') << std::endl;
     std::cout << "Price: " << calc(&Option::price) << std::endl;
     std::cout << "Delta: " << calc(&Option::delta) << std::endl;
     std::cout << "Gamma: " << calc(&Option::gamma) << std::endl;
     std::cout << "Vega: " << calc(&Option::vega) << std::endl;
-    std::cout << "==========================" << std::endl;
+    std::cout << std::string(35, '-') << std::endl;
 }
