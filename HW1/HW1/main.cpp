@@ -7,7 +7,6 @@
 #include "option_portfolio.h"
 
 int main() {
-    
     try {
         std::vector<Date> date;
         for (int i = 9; i <= 12; ++i) {
@@ -44,8 +43,7 @@ int main() {
                 vec.push_back(new BinaryOption(expiration[i], strike[i], type[i]));
             }
             else {
-                std::cerr << "Invalid option class" << std::endl;
-                return 1;
+                throw std::invalid_argument("Invalid option class");
             }
         }
         

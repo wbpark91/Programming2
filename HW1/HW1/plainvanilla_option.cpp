@@ -1,6 +1,11 @@
 #include "plainvanilla_option.h"
 #include "normal.h"
 #include <cmath>
+
+PlainVanillaOption::PlainVanillaOption(const PlainVanillaOption& inst) : Option(inst.expiration_, inst.strike_, inst.type_) {
+    payoff_ = new PlainVanillaPayoff(inst.strike_, inst.type_);
+}
+
 double PlainVanillaOption::price() {
     double d1 = getd1();
     double d2 = getd2();
