@@ -2,3 +2,6 @@
 *.docx
 *.pdb
 *.obj
+*.zip
+*.xcuserstate
+*.pbxproj
