@@ -3,6 +3,7 @@
 
 class Date {
 public:
+    Date() {}
     Date(unsigned int year, unsigned int month, unsigned int day)
     : year_(year), month_(month), day_(day) {};
     unsigned int year() { return year_; }

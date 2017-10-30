@@ -36,6 +36,7 @@
 		EA6419541F80AE5E00797687 /* binary_option.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = binary_option.h; sourceTree = "<group>"; };
 		EA6419551F80B33400797687 /* option_portfolio.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = option_portfolio.cpp; sourceTree = "<group>"; };
 		EA6419571F80B33C00797687 /* option_portfolio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = option_portfolio.h; sourceTree = "<group>"; };
+		EA667CEA1F9A0ED2005DE28A /* payoff.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = payoff.h; sourceTree = "<group>"; };
 		EA6FE6571F77EE6500B82CC1 /* yield_termstructure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = yield_termstructure.h; sourceTree = "<group>"; };
 		EA6FE6581F77EE7700B82CC1 /* yield_termstructure.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = yield_termstructure.cpp; sourceTree = "<group>"; };
 		EAE304031F77DD680005F689 /* HW1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HW1; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +87,7 @@
 				EA1BD4211F7FBAFF0014CEE2 /* option.h */,
 				EA1BD4221F7FBB070014CEE2 /* option.cpp */,
 				EAE304131F77E6530005F689 /* plainvanilla_option.cpp */,
+				EA667CEA1F9A0ED2005DE28A /* payoff.h */,
 				EAE304151F77E65B0005F689 /* plainvanilla_option.h */,
 				EA6419521F80AE5500797687 /* binary_option.cpp */,
 				EA6419541F80AE5E00797687 /* binary_option.h */,
@@ -276,6 +278,7 @@
 		EAE3040B1F77DD680005F689 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -284,6 +287,7 @@
 		EAE3040C1F77DD680005F689 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
