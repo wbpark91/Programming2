@@ -42,3 +42,6 @@ project.xcworkspace
 *.exe
 *.out
 *.app
+*.pptx
+*.docx
+*.pdf
